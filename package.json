@@ -1,0 +1,16 @@
+{
+  "name": "backendrestaurantejava",
+  "version": "1.0.0",
+  "description": "API en Express para el Restaurante",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "adriano",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongodb": "^7.0.0"
+  }
+}
