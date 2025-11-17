@@ -114,7 +114,9 @@ app.get("/api/mesas/:tableId/pedido", async (req, res) => {
         }
 
         if (!mesa.order) {
-            return res.json({ tableId: mesa.id, products: [], state: "vacio" });
+
+            return res.json({ tableId: mesa.id, products: [], state: "" });
+
         }
 
         const products = mesa.order.products || [];
@@ -123,7 +125,7 @@ app.get("/api/mesas/:tableId/pedido", async (req, res) => {
 
             tableId: mesa.id,
             products: products,
-            state: mesa.order.state || "pendiente"
+            state: mesa.order.state || ""
 
         };
 
@@ -146,6 +148,7 @@ app.post("/api/mesas/:id/pedido", async (req, res) => {
 
         const tableId = parseInt(req.params.id);
         const { productId, quantity } = req.body;
+        
         if (!productId || !quantity) {
 
             return res.status(400).json({ error: "Se requieren productId y quantity" });
